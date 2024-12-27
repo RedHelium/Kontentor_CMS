@@ -1,0 +1,18 @@
+<h5>Вопросы (FAQ)</h5>
+
+<div class="accordion" id="faq_accordion">
+    {% for faq in questions %}
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-{{faq.id}}" aria-expanded="true" aria-controls="faq-{{faq.id}}">
+            {{faq}}
+          </button>
+        </h2>
+        <div id="faq-{{faq.id}}" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+          <div class="accordion-body">
+            {{faq.answer|safe}}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>

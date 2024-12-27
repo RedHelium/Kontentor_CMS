@@ -1,0 +1,37 @@
+{% load i18n admin_urls %}
+<div class="row mx-auto ">
+    {% block submit-row %}
+        {% if show_save %}
+            <div class="col-auto">
+                <input type="submit" value="{% translate 'Save' %}" class="btn btn-success" name="_save">
+            </div>
+        {% endif %}
+        {% if show_save_as_new %}
+            <div class="col-auto">
+                <input type="submit" value="{% translate 'Save as new' %}" class="btn btn-secondary" name="_saveasnew">
+            </div>
+        {% endif %}
+        {% if show_save_and_add_another %}
+            <div class="col-auto">
+                <input type="submit" class="btn btn-secondary" value="{% translate 'Save and add another' %}" name="_addanother">
+            </div>
+        {% endif %}
+        {% if show_save_and_continue %}
+            <div class="col-auto">
+                <input type="submit" class="btn btn-secondary" value="{% if can_change %}{% translate 'Save and continue editing' %}{% else %}{% translate 'Save and view' %}{% endif %}" name="_continue">
+            </div>
+        {% endif %}
+        {% if show_close %}
+            <div class="col-auto">
+                {% url opts|admin_urlname:'changelist' as changelist_url %}
+                <a href="{% add_preserved_filters changelist_url %}" class="btn btn-warning">{% translate 'Close' %}</a>
+            </div>
+        {% endif %}
+        {% if show_delete_link and original %}
+            <div class="col-auto">
+                {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
+                <a href="{% add_preserved_filters delete_url %}" class="btn btn-danger">{% translate "Delete" %}</a>
+            </div>
+        {% endif %}
+    {% endblock %}
+</div>

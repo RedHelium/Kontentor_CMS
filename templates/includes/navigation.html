@@ -1,0 +1,35 @@
+<!-- {% load kont_pages_tags %}
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      {% comment %} <a class="navbar-brand" href="#">Navbar</a> {% endcomment %}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% for item in navigation_menu_items %}
+            {% if not item.parent %}
+              {% if item.children.count < 1 %}
+                <li class="nav-item">
+                  <a  class="nav-link {% if not item.page %}disabled{% endif %}" href="{{ item.page.url }}">{{ item.title }}</a> 
+                </li>
+                {% else %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ item.title }}
+                    </a>
+                    <ul class="dropdown-menu">
+                      {% for child in item.children|get_published_childs:item %}
+                        <li>
+                          <a class="dropdown-item" href="/{{ child.page.slug }}">{{ child.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav> -->

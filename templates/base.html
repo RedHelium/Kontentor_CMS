@@ -1,0 +1,22 @@
+{% load static %}
+<html lang="{{site_settings.meta_language}}"  data-bs-theme="dark" prefix="og: http://ogp.me/ns#">
+    <head>
+        {% include "includes/base_meta.html" %}
+        {% include "includes/open_graph_meta.html" %}
+
+        {% block extra_meta %}{% endblock extra_meta %}
+        {% block extra_css %}{% endblock extra_css %}
+        {% block extra_header_js %}{% endblock extra_header_js %}
+
+        <link  rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+        <script src="{% static "bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    </head>
+    <body>
+
+        {% block content %}{% endblock content %}
+        
+        {% include "includes/footer.html" %}
+
+        {% block extra_js %}{% endblock extra_js %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block extrahead %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "kontentor_admin.css" %}" />  
+    
+{% endblock %}
+
+{% block branding  %}<div class="fs-3 fw-lighter text-light">{{site_settings.title}}</div>{% endblock branding  %}
+
+
+
+{% block footer  %}
+    <div id="" class="row mx-auto d-flex align-items-center">
+       <div class="col bg-dark">
+            <p class="text-center p-3">    
+                --- Сделано с помощью Контентора ---
+            </p>
+       </div>
+    </div>
+{% endblock footer  %}
