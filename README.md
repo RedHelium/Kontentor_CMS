@@ -1,4 +1,5 @@
 # Контентор
+![Kontentor](https://github.com/user-attachments/assets/ea636911-b659-465d-8938-d7e8fdaef051)
 ## Модульный CMS для Django
 
 ## Описание
